@@ -1,0 +1,3 @@
+const wordMock = {
+  'word': 'test',
+};
