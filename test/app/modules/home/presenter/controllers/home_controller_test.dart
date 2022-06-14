@@ -32,29 +32,28 @@ void main() {
 
   const tWordModel = WordModel('teste');
 
+  showErrorNotification(Failure error) => notificationManager.showErrorNotification(error.message);
+
   test('should get a valid word and persist when calls the home controller method', () async {
     when(() => localFilesImplementation.getCurrentWord()).thenAnswer((_) async => tWordModel);
 
-    await homeController.getCurrentWord((_) => null);
+    await homeController.getCurrentWord(showErrorNotification);
 
     expect(
       homeController.currentWord,
       tWordModel,
     );
     verify(() => localFilesImplementation.getCurrentWord()).called(1);
+    verifyNever(() => notificationManager.showErrorNotification(any<String>()));
   });
 
   test('should get a error when calls the home controller method', () async {
     when(() => localFilesImplementation.getCurrentWord()).thenAnswer((_) async => const WordModel('test'));
 
-    Failure? error;
-
-    dynamic onErrorCallback(e) => error = e;
-
-    await homeController.getCurrentWord(onErrorCallback);
+    await homeController.getCurrentWord(showErrorNotification);
 
     expect(homeController.currentWord, null);
-    expect(error, isA<InvalidWordFailure>());
     verify(() => localFilesImplementation.getCurrentWord()).called(1);
+    verify(() => notificationManager.showErrorNotification(any<String>())).called(1);
   });
 }
