@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-enum LanguageType { english, arabic }
+enum LanguageType { english, portugueseLocal }
 
-const String arabic = "ar";
+const String portuguese = "pt";
 const String english = "en";
 const String assetPathLocalisations = "assets/translations";
 
-const Locale arabicLocal = Locale("ar");
+const Locale portugueseLocal = Locale("pt");
 const Locale englishLocal = Locale("en");
 
 extension LanguageTypeExtension on LanguageType {
@@ -14,8 +14,8 @@ extension LanguageTypeExtension on LanguageType {
     switch (this) {
       case LanguageType.english:
         return english;
-      case LanguageType.arabic:
-        return arabic;
+      case LanguageType.portugueseLocal:
+        return portuguese;
     }
   }
 }
