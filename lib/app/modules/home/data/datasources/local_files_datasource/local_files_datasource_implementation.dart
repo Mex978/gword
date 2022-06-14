@@ -7,7 +7,7 @@ import 'package:gword/app/core/resources/assets_manager.dart';
 import 'package:gword/app/modules/home/data/datasources/word_datasource.dart';
 import 'package:gword/app/modules/home/data/models/word_model.dart';
 
-class LocalFilesImplementation extends IWordDatasource {
+class LocalFilesDatasourceImplementation extends IWordDatasource {
   @override
   Future<WordModel> getCurrentWord() async {
     try {
