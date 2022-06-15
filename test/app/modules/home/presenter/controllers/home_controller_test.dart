@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gword/app/core/errors/failures.dart';
 import 'package:gword/app/core/helpers/notification_manager.dart';
-import 'package:gword/app/modules/home/data/datasources/word_datasource.dart';
-import 'package:gword/app/modules/home/data/models/word_model.dart';
-import 'package:gword/app/modules/home/data/repositories/word_repository_implementation.dart';
 import 'package:gword/app/modules/home/domain/usecases/get_current_word_usecase.dart';
+import 'package:gword/app/modules/home/infra/datasources/word_datasource.dart';
+import 'package:gword/app/modules/home/infra/models/word_model.dart';
+import 'package:gword/app/modules/home/infra/repositories/word_repository_implementation.dart';
 import 'package:gword/app/modules/home/presenter/controllers/home_controller.dart';
 import 'package:mocktail/mocktail.dart';
 

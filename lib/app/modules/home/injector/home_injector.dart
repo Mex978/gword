@@ -1,10 +1,12 @@
 import 'package:get_it/get_it.dart';
 import 'package:gword/app/core/helpers/bot_toast_notification_manager.dart';
 import 'package:gword/app/core/injector/injector.dart';
-import 'package:gword/app/modules/home/data/datasources/local_files_datasource/local_files_datasource_implementation.dart';
-import 'package:gword/app/modules/home/data/repositories/word_repository_implementation.dart';
+import 'package:gword/app/core/local_storage_client/shared_preferences_client_implementation.dart';
 import 'package:gword/app/modules/home/domain/usecases/get_current_word_usecase.dart';
+import 'package:gword/app/modules/home/external/datasources/local_storage_datasource/local_storage_datasource_implementation.dart';
+import 'package:gword/app/modules/home/infra/repositories/word_repository_implementation.dart';
 import 'package:gword/app/modules/home/presenter/controllers/home_controller.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeInjector extends IInjector {
   HomeInjector._internal();
@@ -20,9 +22,11 @@ class HomeInjector extends IInjector {
 
   @override
   Future<void> init() async {
-    _locator.registerLazySingleton(() => LocalFilesDatasourceImplementation());
-    _locator
-        .registerLazySingleton(() => WordRepositoryImplementation(_locator.get<LocalFilesDatasourceImplementation>()));
+    final sharedPreferences = await SharedPreferences.getInstance();
+    _locator.registerLazySingleton(
+        () => LocalStorageDatasourceImplementation(SharedPreferencesClientImplementation(sharedPreferences)));
+    _locator.registerLazySingleton(
+        () => WordRepositoryImplementation(_locator.get<LocalStorageDatasourceImplementation>()));
     _locator.registerLazySingleton(() => GetCurrentWordUsecase(_locator.get<WordRepositoryImplementation>()));
     _locator.registerLazySingleton(
       () => HomeController(

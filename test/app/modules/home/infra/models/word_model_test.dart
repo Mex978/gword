@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gword/app/modules/home/data/models/word_model.dart';
 import 'package:gword/app/modules/home/domain/entities/word_entity.dart';
+import 'package:gword/app/modules/home/infra/models/word_model.dart';
 
 import '../../../../../mocks/word_mock.dart';
 

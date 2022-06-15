@@ -33,3 +33,10 @@ class InvalidWordFailure extends Failure {
   @override
   List<Object?> get props => [];
 }
+
+class WordAlreadyExistsFailure extends Failure {
+  const WordAlreadyExistsFailure() : super(message: 'Você já tentou essa palavra!');
+
+  @override
+  List<Object?> get props => [];
+}

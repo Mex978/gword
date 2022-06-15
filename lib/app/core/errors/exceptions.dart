@@ -4,3 +4,8 @@ class ServerException extends Equatable implements Exception {
   @override
   List<Object?> get props => [];
 }
+
+class WordAlreadyExistsException extends Equatable implements Exception {
+  @override
+  List<Object?> get props => [];
+}
