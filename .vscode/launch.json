@@ -1,0 +1,58 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "GWORD - DEV",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "args": [
+          "--flavor",
+          "dev"
+        ]
+      },
+      {
+        "name": "GWORD - QA (Debug)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "args": [
+          "--flavor",
+          "qa"
+        ]
+      },
+      {
+        "name": "GWORD - QA (Profile)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "profile",
+        "args": [
+          "--flavor",
+          "qa"
+        ]
+      },
+      {
+        "name": "GWORD - HOM",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "args": [
+          "--flavor",
+          "hom"
+        ]
+      },
+      {
+        "name": "GWORD - PROD",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "args": [
+          "--flavor",
+          "prod"
+        ]
+      },
+    ]
+  }
