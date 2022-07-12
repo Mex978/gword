@@ -39,12 +39,60 @@ dependencies:
   intl: ^0.17.0
   path_provider: ^2.0.11
   shared_preferences: ^2.0.15
+  package_info_plus: ^1.4.2
 
 dev_dependencies:
+  flutter_flavorizr: ^2.1.3
   mocktail: ^0.3.0
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+    ios:
+
+  flavors:
+    dev:
+      app:
+        name: "your app name to dev"
+
+      android:
+        applicationId: "com.example.gword.dev" #TODO: your package name to dev
+
+      ios:
+        bundleId: "com.example.gword.dev" #TODO: your package name to dev
+
+    qa:
+      app:
+        name: "your app name to qa"
+
+      android:
+        applicationId: "com.example.gword.qa" #TODO: your package name to QA
+      ios:
+        bundleId: "com.example.gword.dev" #TODO: your package name to QA
+    
+    hml:
+      app:
+        name: "your app name to hml"
+
+      android:
+        applicationId: "com.example.gword.hml" #TODO: your package name to HML
+      ios:
+        bundleId: "com.example.gword.hml" #TODO: your package name to HML
+
+    prod:
+      app:
+        name: "your app name to prod"
+
+      android:
+        applicationId: "com.example.gword" #TODO: your package name to PROD
+      ios:
+        bundleId: "com.example.gword" #TODO: your package name to PROD
+
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
