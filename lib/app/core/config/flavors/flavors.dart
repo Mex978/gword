@@ -37,16 +37,16 @@ class EnvironmentFlavor {
   static Future<void> fetchFlavor() async {
     await PackageInfo.fromPlatform().then((PackageInfo packageInfo) {
       switch (packageInfo.packageName) {
-        case "com.drteladoc.dev":
+        case "com.example.gword.dev": //TODO: YOUR PACKAGE NAME HERE
           appFlavor = Flavor.dev;
           break;
-        case "com.drteladoc.qa":
+        case "com.example.gword.qa": //TODO: YOUR PACKAGE NAME HERE
           appFlavor = Flavor.qa;
           break;
-        case "com.drteladoc.homolog":
+        case "com.example.gword.hml": //TODO: YOUR PACKAGE NAME HERE
           appFlavor = Flavor.hml;
           break;
-        case "com.drteladoc":
+        case "com.example.gword": //TODO: YOUR PACKAGE NAME HERE
           appFlavor = Flavor.prod;
           break;
         default:
